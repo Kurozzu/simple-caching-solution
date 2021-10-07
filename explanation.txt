@@ -1,0 +1,18 @@
+Se genera una funcionalidad tipo cache, donde una consulta realizada a la función read se guarda en una colección de objetos
+que contiene el "start", "length" y "result" de la llamada.
+
+1.- Ingresa a la función principal generada
+2.- Valida si ya existe una consulta de read en la variable caché
+3.- Si no existe, llama a industrialProtocol.read() y en el callback registra la llamada en caché
+4.- Si existe en caché, obtiene el result de la caché y lo entrega.
+
+Con esto, cuando se realiza una petición de memoria que ya se encuentra en la caché, no es necesario llamar a la función read para poder 
+obtener los datos. Por tanto, se evita la lectura de datos ya entregados por read y el tiempo de ejecución y coste se ven minimizados.
+
+La funcionalidad es un caché sencillo que puede ser mejorado agregando tiempos en que se mantenga la información en dicho caché, 
+podría ser un archivo externo o una BD (no relacional) que mantenga la información en caso de que la variable se vea vaciada por alguna falla.
+
+La solución se desarrolló luego de realizar algunos análisis tanto del problema entregado, como de la capacidad del lenguaje seleccionado (TypeScript).
+Luego de dicho análisis, exploré algunas soluciones factibles para determinar que, la solución aplicada sería la más sencilla de usar e implementar en un sistema
+que ya se encuentre funcionando, sin tener que realizar demasiadas modificaciones.
+Luego se genero el código teniendo en cuenta lo que se quería lograr.
